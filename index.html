@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Dinesh Pavan Tanuja" />
+    <meta name="description" content="SOFTWARE PROJECT" />
+    <!--link start-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!--link end-->
+    <title>2(55,56,58),</title>
+</head>
+
+<body>
+    <!--nav-start-->
+    <div class="navbar">
+        <div class="nav-txt">Time Table</div>
+    </div>
+    <!--nav-end-->
+    <!--image-start-->
+    <div class="iview">
+        <img src="img\insert.png" alt="insert image" />
+    </div>
+    <!--image-end-->
+    <!--login button-->
+    <div class="login-section" align="center" style="margin-top: 30px;">
+        <button class="tlogin" id="telogin">teacher</button>
+        <button class="alogin" id="adlogin">admin</button>
+    </div>
+    <!--login-end-->
+    <!--modal for credentiols-->
+    <div class="modal" id="myModal">
+        <!--modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="pophead" class="head-text">Modal Header</h2>
+            </div>
+            <div class="modal-body" id="LoginType">
+                <!--admin login-->
+                <div id="adminForm" style="display: none;">
+                    <form action="adminVerify.php" method="POST">
+                        <div class="form-space">
+                            <label for="adminame">name</label>
+                            <input type="text" placeholder="username" id="adminame" name="username" />
+                        </div>
+                        <div class="form-space">
+                            <label for="pwd">password</label>
+                            <input type="password" placeholder="password" id="pwd" name="password" />
+                        </div>
+                        <div align="right">
+                            <input type="submit" name="login" value="login" class="sub-btn" />
+                        </div>
+                    </form>
+
+                </div>
+                <!--faculty logim-->
+                <div id="facultyForm" style="display: none;">
+                    <form action="facultyVerify.php" method="POST">
+                        <div class="form-space">
+                            <label for="facultyno">Faculty number</label>
+                            <input type="text" placeholder="no...." name="faculty-number" id="fno">
+                        </div>
+                        <div align="right">
+                            <input type="submit" name="login" value="login" class="sub-btn" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--modal for credentiols end-->
+    <!--modal function-->
+    <script>
+        //getting the modal
+        var modal = document.getElementById("myModal");
+        //when the button is pressed
+        var teachLoginBtn = document.getElementById("telogin");
+        var adminLoginBtn = document.getElementById("adlogin");
+        var heading = document.getElementById("pophead");
+        var facultyForm = document.getElementById("facultyForm");
+        var adminForm = document.getElementById("adminForm");
+
+        //following fucntion for admin
+        adminLoginBtn.onclick = function() {
+
+                modal.style.display = "block";
+                heading.innerHTML = "Admin Login";
+                adminForm.style.display = "block";
+                facultyForm.style.display = "none";
+            }
+            // following function for teacher
+        teachLoginBtn.onclick = function() {
+
+                modal.style.display = "block";
+                heading.innerHTML = "Faculy Login";
+                adminForm.style.display = "none";
+                facultyForm.style.display = "block";
+            }
+            // when clicked outside modal
+        window.onclick = function(event) {
+            if (event.target == modal)
+                modal.style.display = "none";
+
+        }
+    </script>
+    <!--faculty-section start-->
+    <div class="faculty-section">
+        <div>
+            hi
+        </div>
+    </div>
+</body>
+
+
+</html>
